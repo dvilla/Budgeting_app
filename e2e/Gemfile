@@ -1,0 +1,10 @@
+source 'https://rubygems.org'
+
+ruby '~> 2.3.5'
+
+gem 'minitest'
+gem 'minitest-capybara'
+gem 'minitest-reporters'
+gem 'selenium-webdriver'
+gem 'capybara'
+gem 'pry'
