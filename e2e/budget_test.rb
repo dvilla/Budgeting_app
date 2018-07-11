@@ -13,15 +13,19 @@ describe 'Budget test' do
     fill_in_amount(7400)
     submit_element
 
+    #calculating the sum incomes and the sum of outcomes from the list
+    sum_of_incomes_from_list = get_all_incomes_amounts.reduce(:+)
+    sum_of_outcomes_from_list = get_all_outcomes_amounts.reduce(:+)
+
     assert_equal "We did very good this month", description_of_last_element_added_to_budget
     assert_equal "$7,400.00", amount_of_last_element_added_to_budget
     assert_equal "Income", category_of_last_element_added_to_budget
 
-    assert_equal total_inflow, get_all_incomes_amounts.reduce(:+)
-    assert_equal total_outflow, get_all_outcomes_amounts.reduce(:+).abs
+    assert_equal total_inflow, sum_of_incomes_from_list
+    assert_equal total_outflow, sum_of_outcomes_from_list.abs
 
     #We sum the outcomes since those are negative
-    calculated_working_balance = get_all_incomes_amounts.reduce(:+) + get_all_outcomes_amounts.reduce(:+)
+    calculated_working_balance = sum_of_incomes_from_list + sum_of_outcomes_from_list
     assert_equal calculated_working_balance, working_balance
   end
 
