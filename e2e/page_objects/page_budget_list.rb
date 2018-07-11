@@ -1,4 +1,4 @@
-module BudgetList
+module BudgetListPageObject
 
   def select_element_category(category)
     find("[name='categoryId']").find(:option, text: /#{category}/i).click
@@ -54,6 +54,10 @@ module BudgetList
     find('tbody').all('tr', text: /^(?!income).*/i).map do |row|
       row.text.match(/(-?)\$\d.*$/)[0].tr("$,","").to_f
     end
+  end
+
+  def go_to_reports_page
+    find("[href='/reports']").click
   end
 
 end
