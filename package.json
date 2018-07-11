@@ -8,6 +8,9 @@
   "scripts": {
     "test": "jest",
     "test:watch": "jest --watch",
+    "test:prepare-integration": "bundle install --gemfile=./e2e/Gemfile",
+    "test:integration": "ruby e2e/budget_test.rb",
+    "test:integration-html-report": "HTML_REPORTER=true ruby e2e/budget_test.rb",
     "coverage": "jest --coverage",
     "start": "webpack-dev-server",
     "prod": "cross-env NODE_ENV=production webpack-dev-server --env.prod=true",

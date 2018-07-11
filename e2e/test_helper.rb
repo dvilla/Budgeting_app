@@ -14,6 +14,10 @@ Dir["./e2e/page_objects/*.rb"].each {|file| require file }
 #Using minitest spec reporter to show test names
 Minitest::Reporters.use! Minitest::Reporters::SpecReporter.new
 
+if ENV["HTML_REPORTER"]
+  Minitest::Reporters.use! Minitest::Reporters::HtmlReporter.new({reports_dir: 'e2e/html_reports'})
+end
+
 #Adding headless chrome to run in on a continuous integration server
 Capybara.register_driver :headless_chrome do |app|
   capabilities = Selenium::WebDriver::Remote::Capabilities.chrome(
