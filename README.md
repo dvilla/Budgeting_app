@@ -147,6 +147,9 @@ Similar to Yarn, really...
 * `npm run lint:fix` - lint check + autofixes + prettify code with __prettier__
 * `npm run test` - run test suite
 * `npm run test:fix` - run test suite watching files for changes
+* `npm run test:prepare-integration` - Prepare integration test to be run, this install all dependencies
+* `npm run test:integration` - run integration tests
+* `npm run test:integration-html-report` - run integration tests and generates an html report
 * `npm run flow` - run flow type checking
 * `npm run update-types` - update flow library definitions
 
