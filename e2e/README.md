@@ -48,7 +48,7 @@ The sum of all the other
 
 A full list of test cases will be impossible as full would imply test out of the scope of this plan but we will try to cover the most valuable ones, the ones that touch the core centric feature of the app
 
-All test cases are considered to start from the root of the app. The following link will provide a spreadsheet with test cases
+All test cases are considered to start from the root of the app. The first to test cases and the last two are automated and are covered on the integration tests
 
 | Description                                                                                                      | Input data                                              | Expected behaviour                                                                                                                                    |
 |------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------|
