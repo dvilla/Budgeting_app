@@ -8,8 +8,13 @@ require 'minitest/reporters'
 require 'minitest/autorun'
 require 'pry'
 
+#Including all page objects to be available in all tests
+Dir["./e2e/page_objects/*.rb"].each {|file| require file }
+
+#Using minitest spec reporter to show test names
 Minitest::Reporters.use! Minitest::Reporters::SpecReporter.new
 
+#Adding headless chrome to run in on a continuous integration server
 Capybara.register_driver :headless_chrome do |app|
   capabilities = Selenium::WebDriver::Remote::Capabilities.chrome(
     chromeOptions: {
